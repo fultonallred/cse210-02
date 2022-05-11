@@ -9,6 +9,7 @@ class Director:
         total_score (int): The score for the entire game.'''
 
     def __init__(self):
+        '''Constructs a new director.'''
         # We only need one instance per turn so self.card can equal the Card class directly. 
         self.card = Card()
         #A place to hold the last turn's value.
