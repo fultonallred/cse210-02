@@ -10,7 +10,9 @@ class Card:
 
     
     def __init__(self):
+        '''Constructs a new instance of Card'''
         self.value = 0
 
     def draw_card(self):
+        '''Creates random value for the next drawn card.'''
         self.value = random.randint(1,13)
