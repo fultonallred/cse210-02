@@ -29,14 +29,24 @@ class Director:
             self.last_value = card.value
             print()
             print(f'The card is {card.value}')
+            
+            while True:
+                self.get_higher_lower()
+                if self.higher_lower != "h" and self.higher_lower != "l":
+                    print("\nInvalid entry\n")
+                    print(f'The card is {card.value}')
+                else:
+                    break
 
-            self.get_higher_lower()
             self.do_updates()
             self.do_outputs()
+        
+        print("\nThank you for playing!\n")
             
     def get_higher_lower(self):
         '''Asks the user for higher lower chose and records that input.'''
         higher_lower = input('Higher or lower? [h/l]: ')
+
         self.higher_lower = higher_lower
     
     def do_updates(self):
@@ -59,7 +69,13 @@ class Director:
         print(f'Your score is {self.score}')
 
         if self.score > 0:
-            play_again = input('Play again? [y/n]: ')
+            while True:
+                play_again = input('Play again? [y/n]: ')
+                if play_again != "y" and play_again != "n":
+                    print("\nInvalid entry\n")
+                else:
+                    break
+
             self.is_playing = (play_again == 'y')
 
         else:
